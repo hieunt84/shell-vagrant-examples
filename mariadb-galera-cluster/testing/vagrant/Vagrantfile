@@ -1,0 +1,35 @@
+Vagrant.configure("2") do |config|
+
+  # make vm node1
+  config.vm.define "node1" do |node|
+    node.vm.box = "generic/centos7"
+    node.vm.box_check_update = false
+    node.vm.hostname = "node1"
+    node.vm.network "public_network", ip: "172.20.10.199"
+    node.vm.provision "shell", path: "setup-mariadb-node1.sh"
+  end
+
+  # make vm node2
+  config.vm.define "node2" do |node|
+    node.vm.box = "generic/centos7"
+    node.vm.box_check_update = false
+    node.vm.hostname = "srv-node2"
+    node.vm.network "public_network", ip: "172.20.10.200"
+    node.vm.provision "shell", path: "setup-mariadb-node2.sh"
+  end
+
+  # make vm node1
+  config.vm.define "node3" do |node|
+    node.vm.box = "generic/centos7"
+    node.vm.box_check_update = false
+    node.vm.hostname = "srv-node3"
+    node.vm.network "public_network", ip: "172.20.10.201"
+    node.vm.provision "shell", path: "setup-mariadb-node3.sh"
+  end
+  
+
+
+
+
+
+end

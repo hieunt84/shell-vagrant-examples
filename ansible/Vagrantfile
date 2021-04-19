@@ -1,0 +1,11 @@
+Vagrant.configure("2") do |config|
+
+  # make vm ansible
+  config.vm.define "srv-ansible" do |node|
+    node.vm.box = "generic/centos7"
+    node.vm.hostname = "ser-ansible"
+    node.vm.network "public_network", ip: "172.20.10.197"
+    node.vm.provision "shell", path: "setup-ansible.sh"
+  end
+
+end

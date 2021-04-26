@@ -1,0 +1,21 @@
+Vagrant.configure("2") do |config|
+
+  # make vm db
+  config.vm.define "db" do |node|
+    node.vm.box = "generic/centos7"
+    node.vm.box_check_update = false
+    node.vm.hostname = "ser-db"
+    node.vm.network "public_network", ip: "172.20.10.200"
+    node.vm.provision "shell", path: "setup-db.sh"
+  end
+
+  # make vm web
+  config.vm.define "web" do |node|
+    node.vm.box = "generic/centos7"
+    config.vm.box_check_update = false
+    node.vm.hostname = "ser-web"
+    node.vm.network "public_network", ip: "172.20.10.201"
+    node.vm.provision "shell", path: "setup-web.sh"
+  end
+
+end

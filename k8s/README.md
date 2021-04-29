@@ -1,4 +1,4 @@
-## Depoly k8s on vagrant and shell scripts
+## Deploy k8s on vagrant and shell scripts
 
 ## REF
 - https://blogd.net/kubernetes/cai-dat-kubernetes-cluster/

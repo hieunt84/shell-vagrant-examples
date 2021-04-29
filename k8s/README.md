@@ -1,3 +1,5 @@
+## Depoly k8s on vagrant and shell scripts
+
 ## REF
 - https://blogd.net/kubernetes/cai-dat-kubernetes-cluster/
 - https://xuanthulab.net/gioi-thieu-va-cai-dat-kubernetes-cluster.html#worker
@@ -6,5 +8,5 @@
 
 
 ## ENVIRONMENT
-- Developing on eve-ng and vagrant
-- Testing on eve-ng and vagrant
+- Developing on vagrant
+- Testing on vagrant

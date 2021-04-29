@@ -26,9 +26,9 @@ systemctl disable firewalld
 
 # config file host
 cat >> "/etc/hosts" <<END
-10.124.11.17 node1
-10.124.11.28 node2
-10.124.11.29 node3 
+172.16.10.100 node1
+172.16.10.101 node2
+172.16.10.102 node3 
 END
 
 # config network, config in vagrantfile in dev

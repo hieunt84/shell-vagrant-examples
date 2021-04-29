@@ -9,8 +9,8 @@ Vagrant.configure("2") do |config|
     node.vm.box_check_update = false
     # node.vbguest.auto_update = false
     node.vm.hostname = "node1"
-    node.vm.network "private_network", ip: "10.124.11.17"
-    node.vm.provision "shell", path: "setup-master.sh"
+    node.vm.network "private_network", ip: "172.16.10.100"
+    node.vm.provision "shell", path: "setup-master.sh"   
   end
 
   # make vm node2 - worker
@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
     node.vm.box_check_update = false
     # node.vbguest.auto_update = false
     node.vm.hostname = "node2"
-    node.vm.network "private_network", ip: "10.124.11.28"
+    node.vm.network "private_network", ip: "172.16.10.101"
     node.vm.provision "shell", path: "setup-node.sh"
   end
 
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
     node.vm.box_check_update = false
     # node.vbguest.auto_update = false
     node.vm.hostname = "node3"
-    node.vm.network "private_network", ip: "10.124.11.29"
+    node.vm.network "private_network", ip: "172.16.10.102"
     node.vm.provision "shell", path: "setup-node.sh"
   end
 

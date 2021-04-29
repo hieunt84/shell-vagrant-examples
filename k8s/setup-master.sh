@@ -26,9 +26,9 @@ hostnamectl set-hostname node1
 
 # config file host
 cat >> "/etc/hosts" <<END
-10.124.11.17 node1
-10.124.11.28 node2
-10.124.11.29 node3 
+172.16.10.100 node1
+172.16.10.101 node2
+172.16.10.102 node3 
 END
 
 # config network, config in vagrantfile in dev
@@ -104,7 +104,7 @@ unmanaged-devices=interface-name:cali*;interface-name:tunl*
 EOF
 
 # Thiết lập Kubernetes Cluster
-kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=10.124.11.17
+kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=10.124.11.17
 
 # Thiết lập kubectl cho user root trên Master Node
 export KUBECONFIG=/etc/kubernetes/admin.conf

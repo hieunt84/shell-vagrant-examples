@@ -104,7 +104,7 @@ unmanaged-devices=interface-name:cali*;interface-name:tunl*
 EOF
 
 # Thiết lập Kubernetes Cluster
-kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=10.124.11.17
+kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=172.16.10.100
 
 # Thiết lập kubectl cho user root trên Master Node
 export KUBECONFIG=/etc/kubernetes/admin.conf

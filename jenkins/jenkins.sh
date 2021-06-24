@@ -21,5 +21,3 @@ sudo apt-get -y install jenkins > /dev/null 2>&1
 sudo service jenkins start
 
 sleep 1m
-
-# ref commnad tee: https://www.geeksforgeeks.org/tee-command-linux-example/#:~:text=tee%20command%20reads%20the%20standard,and%20saved%20in%20a%20file.

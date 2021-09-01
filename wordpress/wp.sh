@@ -129,6 +129,7 @@ echo "------------------------------------"
 echo ~~III.Configuring Backup Complete~~
 echo "------------------------------------"
 
+##################################################################################################
 # IV.Configuring send email with postfix
 echo "~~IV.Configuring send email with postfix~~"
 echo "1.Installation postfix and dependencies"
@@ -161,7 +162,8 @@ echo "Configure postfix finish"
 echo "~~IV.Configuring send email with postfix Complete~~"
 echo "------------------------------------"
 
-#Install webmin
+##################################################################################################
+# V.Install webmin
 echo ~~Now Installing Webmin~~
 cat > "/etc/yum.repos.d/webmin.repo" <<END
 [Webmin]
@@ -176,7 +178,8 @@ yum -y install webmin
 echo ~~Now Installing Webmin Complete~~
 echo "------------------------------------"
 
-# Install WordPress
+##################################################################################################
+# VI. Install WordPress
 echo ~~Now Installing WordPress~~
 # Create database WordPress
 # Variables
@@ -207,7 +210,9 @@ sed -i 's/password_here/password_wp/g' /var/www/html/wp-config.php
 
 echo ~~Now Installing WordPress~~
 echo "------------------------------------"
-#Save info
+
+##################################################################################################
+# VII.Save info
 cat > "/root/info.txt" <<END
 password user root database: ${db_root_password}
 password user bk database: ${bk_password}

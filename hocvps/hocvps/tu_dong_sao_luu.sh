@@ -76,7 +76,7 @@ cat >> "/etc/cron.d/db.cron" <<END
 SHELL=/bin/sh
 0 $gio * * $thu root /bin/stbackupdb-$dataname >/dev/null 2>&1
 END
-systemctl restart  crond.service
+systemctl restart crond.service
 
 echo "Data $dataname se duoc tu dong sao luu vao $gio gio $thu12 hang tuan. Ban se nhan duoc email thong bao khi hoan tat."
         ;;

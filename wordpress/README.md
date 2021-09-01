@@ -1,5 +1,6 @@
-# https://blog.cloud365.vn/linux/huong-dan-cai-dat-wordpress/
-# https://linuxize.com/post/install-php-7-on-centos-7/
+### ref
+https://blog.cloud365.vn/linux/huong-dan-cai-dat-wordpress/
+https://linuxize.com/post/install-php-7-on-centos-7/
 
 # info
 password user root database: 47af4a30f4d5d9e7a

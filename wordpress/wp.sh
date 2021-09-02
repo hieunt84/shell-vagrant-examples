@@ -151,7 +151,7 @@ END
 
 #create file sasl_passwd
 cat > "/etc/postfix/sasl_passwd" <<END
-[smtp.gmail.com]:587 infogroup.sup@gmail.com:Infogroup@68
+[smtp.gmail.com]:587 infogroup.sup@gmail.com:password
 END
 postmap /etc/postfix/sasl_passwd
 chown root:postfix /etc/postfix/sasl_passwd*

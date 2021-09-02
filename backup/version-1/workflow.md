@@ -1,6 +1,6 @@
 ### Backup Workflow
 1. Begin edit install-dependencies.sh
-- edit password for email postfix
+   - edit password for email postfix
 2. Run script install-dependencies.sh
 3. Config rclone manual
    - rclone config

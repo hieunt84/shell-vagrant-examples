@@ -47,7 +47,7 @@ echo "------------------------------------"
 echo "<?php phpinfo(); ?>" > /var/www/html/info.php
 
 #########################################################################################
-# I.Install MariaDB
+# Install MariaDB
 echo ~~I.Now Installing MariaDB -Attended Installation~~
 yum -y install mariadb-server mariadb
 systemctl start mariadb
@@ -56,7 +56,7 @@ echo ~~I.MariaDB Installation Complete~~
 echo "------------------------------------"
 sleep 1
 
-# II.Config Secure mysql_secure_installation_automatically
+# Config Secure mysql_secure_installation_automatically
 # ref http://bertvv.github.io/notes-to-self/2015/11/16/automating-mysql_secure_installation/
 echo ~~II.Now Config mysql_secure_installation_automatically~~
 # Variables
@@ -74,7 +74,7 @@ echo ~~II.Configure mysql_secure_installation_automatically Complete~~
 echo "------------------------------------"
 
 ##################################################################################################
-# III.Configuring Backup Database Automatically
+# Configuring Backup Database Automatically
 echo ~~III.Now Configuring Backup.~~
 # 1.Create user backup.
 sleep 1
@@ -130,7 +130,7 @@ echo ~~III.Configuring Backup Complete~~
 echo "------------------------------------"
 
 ##################################################################################################
-# IV.Configuring send email with postfix
+# Configuring send email with postfix
 echo "~~IV.Configuring send email with postfix~~"
 echo "1.Installation postfix and dependencies"
 yum -y install postfix cyrus-sasl-plain mailx
@@ -163,7 +163,7 @@ echo "~~IV.Configuring send email with postfix Complete~~"
 echo "------------------------------------"
 
 ##################################################################################################
-# V.Install webmin
+# Install webmin
 echo ~~Now Installing Webmin~~
 cat > "/etc/yum.repos.d/webmin.repo" <<END
 [Webmin]
@@ -179,7 +179,7 @@ echo ~~Now Installing Webmin Complete~~
 echo "------------------------------------"
 
 ##################################################################################################
-# VI. Install WordPress
+# Install WordPress
 echo ~~Now Installing WordPress~~
 # Create database WordPress
 # Variables
@@ -193,7 +193,7 @@ mysql --user=root --password=${db_root_password}<<END
   GRANT ALL ON $db_wp.* TO '$user_wp'@'$web_host';
 END
 
-#Install Wordpress
+# Install Wordpress
 cd /var/www/html
 curl -sO https://wordpress.org/latest.tar.gz
 tar xzf latest.tar.gz
@@ -203,7 +203,7 @@ mv wordpress/* /var/www/html/
 mv wp-config-sample.php wp-config.php
 sleep 1
 
-#Config Wordpress connect to database on localhost
+# Config Wordpress connect to database on localhost
 sed -i 's/database_name_here/db_wp/g' /var/www/html/wp-config.php
 sed -i 's/username_here/user_wp/g' /var/www/html/wp-config.php
 sed -i 's/password_here/password_wp/g' /var/www/html/wp-config.php
@@ -212,7 +212,7 @@ echo ~~Now Installing WordPress~~
 echo "------------------------------------"
 
 ##################################################################################################
-# VII.Save info
+# Save info
 cat > "/root/info.txt" <<END
 password user root database: ${db_root_password}
 password user bk database: ${bk_password}
